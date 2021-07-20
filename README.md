@@ -1,8 +1,8 @@
 # Contact
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/binomeway/nova-contact-tool.svg?style=flat-square)](https://packagist.org/packages/binomedev/contact)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/binomeway/nova-contact-tool/run-tests?label=tests)](https://github.com/binomedev/contact/actions?query=workflow%3ATests+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/binomeway/nova-contact-tool.svg?style=flat-square)](https://packagist.org/packages/binomedev/contact)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/binomeway/nova-contact-tool.svg?style=flat-square)](https://packagist.org/packages/binomeway/nova-contact-tool)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/binomeway/nova-contact-tool/run-tests?label=tests)](https://github.com/binomeway/nova-contact-tool/actions?query=workflow%3ATests+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/binomeway/nova-contact-tool.svg?style=flat-square)](https://packagist.org/packages/binomeway/nova-contact-tool)
 
 A package to manage contact information such as: email, phone, socials and forms.
 
