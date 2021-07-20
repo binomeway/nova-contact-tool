@@ -1,0 +1,53 @@
+{
+    "name": "binomeway/nova-contact-tool",
+    "description": "A Laravel Nova tool to configure contact details and send mails based on them.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "contact"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Codrin Axinte",
+            "email": "codrin.axinte@binomeway.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=8.0",
+        "dacastro4/laravel-gmail": "^5.1",
+        "eminiarts/nova-tabs": "^1.4",
+        "laravel/nova": "^3.0",
+        "optimistdigital/nova-settings": "^3.1",
+        "spatie/laravel-package-tools": "^1.1",
+        "whitecube/nova-flexible-content": "^0.2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "BinomeWay\\NovaContactTool\\": "src/",
+            "BinomeWay\\NovaContactTool\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BinomeWay\\NovaContactTool\\ToolServiceProvider"
+            ],
+            "aliases": {
+                "Contact": "BinomeWay\\NovaContactTool\\Facades\\Contact"
+            }
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../nova"
+        }
+    ]
+}
