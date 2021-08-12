@@ -27,8 +27,21 @@ class Settings extends Collection
      */
     public function __construct(array $pages = [])
     {
-        $this->pages = $pages;
-        parent::__construct($this->resolve());
+        parent::__construct(
+            $this
+                ->hydratePages($pages)
+                ->resolve()
+        );
+    }
+
+    private function resolve(): Collection
+    {
+        foreach ($this->pages as $page) {
+            $this->settings = array_merge($this->settings, $page->options());
+            $this->casts = array_merge($this->casts, $page->casts());
+        }
+
+        return $this->solveFlexibleCasts(nova_get_settings($this->settings));
     }
 
     /**
@@ -59,6 +72,22 @@ class Settings extends Collection
         return array_key_exists($settingName, $this->casts) && $this->casts[$settingName] === FlexibleCast::class;
     }
 
+    private function hydratePages(array $pages)
+    {
+        foreach ($pages as $page) {
+            if ($page instanceof SettingsPage) {
+                $this->pages[] = $page;
+            } else {
+                // Should thrown an exception
+
+                // TODO: Temporary Fix when using Livewire
+                // FIXME: Must debug further to find out when and what causes to add empty arrays when using autoload in Livewire mount
+            }
+        }
+
+        return $this;
+    }
+
     public function boot()
     {
         // Collect Settings
@@ -67,16 +96,6 @@ class Settings extends Collection
                 NovaSettings::addSettingsFields($page->fields(), $page->casts(), $page->name());
             }
         }
-    }
-
-    private function resolve(): Collection
-    {
-        foreach ($this->pages as $page) {
-            $this->settings = array_merge($this->settings, $page->options());
-            $this->casts = array_merge($this->casts, $page->casts());
-        }
-
-       return $this->solveFlexibleCasts(nova_get_settings($this->settings));
     }
 
     /**
@@ -134,7 +153,7 @@ class Settings extends Collection
 
     public function getDefaultSubject(): string
     {
-       return nova_get_setting(MailSettings::DEFAULT_SUBJECT, config('nova-contact-tool.default_subject'));
+        return nova_get_setting(MailSettings::DEFAULT_SUBJECT, config('nova-contact-tool.default_subject'));
     }
 
     /**
