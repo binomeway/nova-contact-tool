@@ -4,7 +4,7 @@
 namespace BinomeWay\NovaContactTool\Services;
 
 use BinomeWay\NovaContactTool\Contracts\SettingsPage;
-use BinomeWay\Settings\MailSettings;
+use BinomeWay\NovaContactTool\Settings\MailSettings;
 use Illuminate\Support\Collection;
 use JetBrains\PhpStorm\Pure;
 use OptimistDigital\NovaSettings\NovaSettings;
