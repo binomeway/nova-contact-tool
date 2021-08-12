@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=8.0",
-        "dacastro4/laravel-gmail": "^5.1",
+        "dacastro4/laravel-gmail": "^5.1.21",
         "eminiarts/nova-tabs": "^1.4",
         "laravel/nova": "^3.0",
         "optimistdigital/nova-settings": "^3.1",
