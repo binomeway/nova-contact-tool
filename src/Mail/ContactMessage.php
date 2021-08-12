@@ -33,7 +33,7 @@ class ContactMessage extends Mailable implements MailMessage
     {
         $this->subscriber = $subscriber;
         $this->message = $message;
-        $this->subject = $subject ?? __('contact::messages.mail_subject', ['app' => config('app.name')]);
+        $this->subject = $subject ?? __('nova-contact-tool::messages.mail_subject', ['app' => config('app.name')]);
     }
 
     /**
@@ -47,7 +47,7 @@ class ContactMessage extends Mailable implements MailMessage
             ->subject($this->getSubject())
             ->from($this->getSubscriber()->email)
             ->replyTo($this->getSubscriber()->email, $this->getSubscriber()->name)
-            ->markdown('contact::emails.message');
+            ->markdown('nova-contact-tool::emails.message');
     }
 
     public function getSubject(): string
