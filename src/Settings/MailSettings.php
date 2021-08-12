@@ -32,7 +32,7 @@ class MailSettings implements SettingsPage
                         ->rules('email')
                         ->help(__('Set where the messages should be delivered to.')),
 
-                    Text::make(__('Default From Address'), self::DEFAULT_SUBJECT)
+                    Text::make(__('Default From Address'), self::DEFAULT_FROM)
                         ->nullable(),
 
                     Text::make(__('Default Subject'), self::DEFAULT_SUBJECT)
