@@ -15,7 +15,7 @@ class Settings extends Collection
 {
     use HasFlexible;
 
-    private array $pages;
+    private array $pages = [];
     private array $settings = [];
     private array $casts = [];
 
